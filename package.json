@@ -1,7 +1,7 @@
 {
   "name": "tests-for-staged-files",
   "description": "Returns test files related to source files staged for commit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "bin": "tests-for-staged-files.js",
   "main": "tests-for-staged-files.js",
   "scripts": {},
