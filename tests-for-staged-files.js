@@ -1,10 +1,10 @@
-import minimatch from 'minimatch';
-import promisify from 'promisify-node';
-
+const minimatch = require('minimatch');
+const promisify = require('promisify-node');
 const glob = promisify(require('glob'));
 const stagedGitFiles = promisify(require('staged-git-files'));
 
-const [ , , sourceGlob, testGlob ] = process.argv;
+const sourceGlob = process.argv[2];
+const testGlob = process.argv[3];
 
 stagedGitFiles()
 	.then(results => results.map(staged => staged.filename))
@@ -16,7 +16,7 @@ stagedGitFiles()
 
 function findRelatedTest(filepath) {
 	if (minimatch(filepath, sourceGlob, { matchBase: true })) {
-		const [ , ...matches ] = filepath.match(globToRegExp(sourceGlob));
+		const matches = filepath.match(globToRegExp(sourceGlob)).slice(1);
 		return reverse(matches.reverse().reduce((acc, match) => acc.replace(/\*+/, reverse(match)), reverse(testGlob)));
 	}
 
@@ -34,8 +34,5 @@ function reverse(string) {
 }
 
 function flatten(arrays) {
-	return arrays.reduce((acc, array) => {
-		acc.push(...array);
-		return acc;
-	}, []);
+	return arrays.reduce((acc, array) => acc.concat(array), []);
 }

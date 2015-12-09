@@ -2,12 +2,9 @@
   "name": "tests-for-staged-files",
   "description": "Returns test files related to source files staged for commit",
   "version": "0.0.1",
-  "bin": "lib/tests-for-staged-files.js",
-  "main": "lib/tests-for-staged-files.js",
-  "scripts": {
-    "build": "babel -d lib src",
-    "prepublish": "npm run build"
-  },
+  "bin": "tests-for-staged-files.js",
+  "main": "tests-for-staged-files.js",
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ghengeveld/tests-for-staged-files.git"
@@ -30,8 +27,5 @@
     "promisify-node": "^0.3.0",
     "staged-git-files": "0.0.4"
   },
-  "devDependencies": {
-    "babel-cli": "^6.2.0",
-    "babel-preset-es2015": "^6.1.18"
-  }
+  "devDependencies": {}
 }
