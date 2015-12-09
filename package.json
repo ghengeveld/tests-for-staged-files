@@ -1,0 +1,37 @@
+{
+  "name": "tests-for-staged-files",
+  "description": "Returns test files related to source files staged for commit",
+  "version": "0.0.0",
+  "bin": "lib/tests-for-staged-files.js",
+  "main": "lib/tests-for-staged-files.js",
+  "scripts": {
+    "build": "babel -d lib src",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghengeveld/tests-for-staged-files.git"
+  },
+  "keywords": [
+    "test",
+    "staged",
+    "files",
+    "git"
+  ],
+  "author": "Gert Hengeveld <info@ghengeveld.nl> (https://github.com/ghengeveld)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ghengeveld/tests-for-staged-files/issues"
+  },
+  "homepage": "https://github.com/ghengeveld/tests-for-staged-files#readme",
+  "dependencies": {
+    "glob": "^6.0.1",
+    "minimatch": "^3.0.0",
+    "promisify-node": "^0.3.0",
+    "staged-git-files": "0.0.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18"
+  }
+}
