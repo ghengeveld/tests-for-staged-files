@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const minimatch = require('minimatch');
 const promisify = require('promisify-node');
 const glob = promisify(require('glob'));
